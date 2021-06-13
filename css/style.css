@@ -1,0 +1,10 @@
+.mainheader{
+    font-size: 30px;
+}
+
+
+@media only screen and (max-width:360px){
+    .mainheader{
+        font-size: 28px;
+    }
+}
