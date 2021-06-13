@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="/css/materialize.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="img/icons/96.png">
+    <meta rel="apple-mobile-web-app-status-bar" content="097c71">
+    <meta name="theme-color" content="#26A69A">
+    <link rel="icon" href="/img/icons/48.png" sizes="32x32" type="image/png">
+    <title>My Contact</title>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="nav-extended #00897b teal lighten-1">
+        <div class="nav-wrapper  container">
+            <a href="/" class="brand-logo">My Contacts</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="/pages/favorites.html">Favourites</a></li>
+                <li><a href="/pages/about.html">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <ul class="sidenav" id="mobile-demo">
+        <li><a href="/">Home</a></li>
+        <li><a href="/pages/favorites.html">Favourites</a></li>
+        <li><a href="/pages/about.html">About</a></li>
+    </ul>
+    <div class="">
+        <ul class="contacts collection with-header">
+            <li class="with-header">
+                <h4 class="center-align">Favorites</h4>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Modal Trigger
+    <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a> -->
+
+    <!-- Modal Structure -->
+    <div id="add_contact_modal" class="modal add-contact">
+        <div class="modal-content">
+            <h4>New Contact</h4>
+            <form action="">
+                <input type="text" name="name" placeholder="Enter Name">
+                <input type="number" name="phone" placeholder="Enter Phone Number">
+                <button class="btn">Add</button>
+                <p class="error"></p>
+            </form>
+        </div>
+    </div>
+    <!-- Modal Structure -->
+    <div id="edit_modal_contact" class="modal edit-contact">
+        <div class="modal-content">
+            <h4>Update Contact</h4>
+            <form action="">
+                <input type="text" name="name" placeholder="Enter Name">
+                <input type="number" name="phone" placeholder="Enter Phone Number">
+                <button class="btn">Update</button>
+                <p class="error"></p>
+            </form>
+        </div>
+    </div>
+
+    <div class="fixed-action-btn">
+        <a class="btn-floating btn-large red modal-trigger" href="#add_contact_modal">
+            <i class="large material-icons">mode_edit</i>
+        </a>
+    </div>
+
+
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-firestore.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyBnsmay4UNcI0DuAUkNjq9XOOJe8JMqiqA",
+            authDomain: "contact-64ea0.firebaseapp.com",
+            projectId: "contact-64ea0",
+            storageBucket: "contact-64ea0.appspot.com",
+            messagingSenderId: "1056815151291",
+            appId: "1:1056815151291:web:224db5f893baff5e13119e"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db=firebase.firestore();
+    </script>
+    <script src="/js/db.js"></script>
+    <script src="/js/app.js"></script>
+    <script src="/js/ui.js"></script>
+</body>
+
+</html>
